@@ -1,7 +1,7 @@
+//Implementação da funções
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <windows.h>
+#include "Aula2.3_PrototiposFuncoes.h"
 
 typedef struct{
     int codigo;
@@ -14,22 +14,17 @@ typedef struct {
     int quantidade;
 }Carrinho;
 
-void infoProduto(Produto prod);
-void menu();
-void cadastrarProduto();
-void listarProdutos();
-void comprarProduto();
-void visualizarCarrinho();
-Produto pegarProdutoPorCodigo(int codigo);
-int * temNoCarrinho(int codigo);
-void fecharPedido();
-
 /*static garante que a variável seja inicializada apenas uma vez e mantenha seu valor entre chamadas de função. 
 Isso significa que o valor de contador_produto não será reiniciado para toda vez que a função onde ela é usada for chamada.*/
 static int contador_produto = 0; //Quantos produtos foram cadastrados
 static int contador_carrinho = 0; //Quantos itens estão no carrinho
 static Produto produtos[50]; //Os produtos disponíveis no mercado
 static Carrinho carrinho[50]; //Os itens no carrinho do usuário
+
+
+void infoProduto(Produto prod);
+Produto pegarProdutoPorCodigo(int codigo);
+int * temNoCarrinho(int codigo);
 
 void menu(){
     int opcoes;
@@ -235,11 +230,4 @@ void fecharPedido(){
         menu();
     }
 
-}
-
-int main(){
-
-    menu();
-    
-    return 0;
 }
