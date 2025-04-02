@@ -1,18 +1,9 @@
 //Implementação da funções
-#include <stdio.h>
+//As aspas duplas indica para o compilador procurar o arquivo no diretório do projeto, se não encontrar então procure no diretório padrão
+#include "Aula2_3_PrototiposFuncoes.h" //inclui o arquivo dos prototipos
+#include <stdio.h> //os sinais <> indica para o compilador que ele deve procurar esse arquivo no direitório padrão do C
 #include <stdlib.h>
-#include "Aula2.3_PrototiposFuncoes.h"
 
-typedef struct{
-    int codigo;
-    char nome[30];
-    float preco;
-}Produto;
-
-typedef struct {
-    Produto produto;
-    int quantidade;
-}Carrinho;
 
 /*static garante que a variável seja inicializada apenas uma vez e mantenha seu valor entre chamadas de função. 
 Isso significa que o valor de contador_produto não será reiniciado para toda vez que a função onde ela é usada for chamada.*/
